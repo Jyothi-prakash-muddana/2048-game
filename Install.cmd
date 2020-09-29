@@ -1,1 +1,1 @@
-pip install numpy random2 pygame pyinstaller pandas 
+pip install numpy random2 pygame pyinstaller
