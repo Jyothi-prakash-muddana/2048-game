@@ -3,9 +3,9 @@
 
 <h2> Developers </h2>
 <ul>
-    <li><h3>Jyothi Prakash Muddana </h3> <li>
-    <li><h3>Deevi Samhita Keertana </h3><li>
-    <li><h3>Dhulipalla Jawahar Brahma Teja</h3><li>
+    <li><h3>Jyothi Prakash Muddana </h3> </li>
+    <li><h3>Deevi Samhita Keertana </h3></li>
+    <li><h3>Dhulipalla Jawahar Brahma Teja</h3></li>
  </ul>   
 <h3> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/blob/master/2048%20Document.pdf'> 2048 Game Document </a></h3>
 <h3> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/raw/master/Setup/mysetup.exe'> Game Installer [Download] </a><h3>
