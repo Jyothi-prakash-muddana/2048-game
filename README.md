@@ -1,5 +1,12 @@
 <h2> 2048 game </h2>
 <img src="https://raw.githubusercontent.com/Jyothi-prakash-muddana/2048-game/master/code/2048_IC5_2.ico" alt="2048" height=75 width=75></img>
+
+<h2> Developers </h2>
+<ul>
+    <li>Jyothi Prakash Muddana <li>
+    <li>Deevi Samhita Keertana <li>
+    <li>Dhulipalla Jawahar Brahma Teja <li>
+ <ul>   
 <h3> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/blob/master/2048%20Document.pdf'> 2048 Game Document </a></h3>
 <h3> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/raw/master/Setup/mysetup.exe'> Game Installer [Download] </a><h3>
 
