@@ -1,5 +1,6 @@
 from gameboard import GameBoard
 import pygame
+from numpy import array
 import pickle
 pygame.init()
 class Game:
@@ -115,7 +116,9 @@ class Game:
     def dontSave(self):
         """ saving None value in the file if player dont want to save """
         pickle_out=open('.\\2048.txt','wb')
-        pickle.dump(None,pickle_out)
+        NONE = [None,]*16 + [0,self.GameBoard.max,self.GameBoard.score,GameBoard.highScore]
+        NONE = array(NONE).reshape((5,4))
+        pickle.dump(NONE,pickle_out)
         pickle_out.close()
         return 'Exit'
     
