@@ -7,6 +7,9 @@ pygame.init()
 
 class GameBoard:
     Direction={'up':(0,-2),'down':(0,2),'left':(-2,0),'right':(2,0)}
+    font = pygame.font.SysFont('Comicsansms',20)
+    font_h = pygame.font.SysFont('comicsansms', 25)
+    highScore = 0
     """It is used to represent the gameboard 
        class variable:
            Direction which is used to represnt some parameters based on direction in modify() function
@@ -31,6 +34,7 @@ class GameBoard:
         list=[Square((i,j)) for j in range(2,400,102) for i in range(2,400,102)]
         self.board=array(list).reshape((4,4))
         self.flag=True
+        self.score = 0
         self.max=2
         self.won=False
         self.gameOver=False
@@ -43,15 +47,26 @@ class GameBoard:
 
     def restore(self,a):
         """ Regenerating the gameboard by taking values that are stored """
+        GameBoard.highScore = a[4,3]
+        self.score = a[4,2]
+        self.max = a[4,1]
+        if a.all()==None:
+            self.score = 0
+            self.max = 2
+            return
+        if self.max >= 2048:
+            self.won = None
         for i in range(4):
-            if max(a[i,:])>=2048:
-                self.won=None
             for j in range(4):
                 self.board[i,j].value=a[i,j]
 
     def display(self):
         """ this is used to display the gameboard """
-        Square.Display.fill((255,255,255))
+        if self.score !=0 :
+            pygame.draw.rect(Square.Display,[255,255,0],(7,40,198,28))
+            Score = GameBoard.font.render(str(self.score), True, (0,0,255))
+            Square.Display.blit(Score,(20,40))
+        pygame.draw.rect(Square.Display,[255,255,255],(0,80,410,410))
         for i in range(4):
             for j in range(4):
                 self.board[i,j].update(self.board[i,j].value)
@@ -152,7 +167,17 @@ class GameBoard:
         self.gameOver=True
 
     def insert(self):
-        """ To insert a new value on the gameboard at random position with either 2 or 4 randomly """
+        """ To insert a new value on the gameboard at random position with either 2 or 4 randomly 
+             it will update the score on screen also
+        """
+        pygame.draw.rect(Square.Display,[255,255,0],(7,40,198,28))
+        Score = GameBoard.font.render(str(self.score), True, (0,0,255))
+        Square.Display.blit(Score,(20,40))
+        if self.score > GameBoard.highScore:
+            GameBoard.highScore = self.score
+            pygame.draw.rect(Square.Display,[255,255,0],(210,40,180,28))
+            Score = GameBoard.font.render(str(GameBoard.highScore), True, (0,0,255))
+            Square.Display.blit(Score,(240,40))
         l=list()
         for i in range(4):
             for j in range(4):
