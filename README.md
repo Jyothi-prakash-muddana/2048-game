@@ -8,7 +8,7 @@
     <li><h3>Dhulipalla Jawahar Brahma Teja</h3></li>
  </ul>   
 <h3> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/blob/master/2048%20Document.pdf'> 2048 Game Document </a></h3>
-<h3> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/raw/master/Setup/mysetup.exe'> Game Installer [Download] </a><h3>
+<h3> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/raw/434e2ca57d277c05e8e9eb82c120caa646939ea0/Executable%20file/2048%20Game.exe'> Game Installer [Download] </a></h3>
 
 <h3> Required Software resources </h3> 
 <ul>
