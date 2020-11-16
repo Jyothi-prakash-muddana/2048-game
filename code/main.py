@@ -20,7 +20,7 @@ class Main:
         Loads old game/ new game based on inputs 
         """
     def __init__(self):
-        self.Display=pygame.display.set_mode((410, 410))
+        self.Display=pygame.display.set_mode((410, 480))
         font=pygame.font.SysFont('comicsansms',35)
         self.Newgame=font.render('New Game',True,[32,27,29])
         self.Continue=font.render('Continue',True,[32,27,29])
@@ -106,7 +106,7 @@ class Main:
         except:
             GameBoard.highScore = 0
         board=GameBoard(self.Display)
-        board.restore(array([choice(l) for i in range(16)]).reshape((4,4)))
+        board.restore(array([choice(l) for i in range(16)]+[0,0,0,GameBoard.highScore]).reshape((5,4)))
         board.display()
         for i in range(100,85,-1):
             font=pygame.font.SysFont('comicsansms', i)
