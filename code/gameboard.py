@@ -31,19 +31,28 @@ class GameBoard:
             calling insert() function 
         """
         Square.Display=Display
-        list=[Square((i,j)) for j in range(2,400,102) for i in range(2,400,102)]
+        list=[Square((i,j)) for j in range(72,470,102) for i in range(2,400,102)]
         self.board=array(list).reshape((4,4))
         self.flag=True
         self.score = 0
         self.max=2
         self.won=False
         self.gameOver=False
+        Square.Display.fill((255,255,255))
+        pygame.draw.rect(Display,[0,0,255],(5,5,400,65))
+        pygame.draw.rect(Square.Display,[255,255,0],(7,7,396,61))
+        Score_h = GameBoard.font_h.render(' YOUR SCORE         HIGH SCORE', True, (255,0,0))
+        Square.Display.blit(Score_h,(5,5))
+        Score = GameBoard.font.render(str(self.score), True, (0,0,255))
+        Square.Display.blit(Score,(20,40))
+        Score = GameBoard.font.render(str(GameBoard.highScore), True, (0,0,255))
+        Square.Display.blit(Score,(240,40))
         self.insert()
 
     def array(self):
         """  Generating an 4x4 matrix only with values on the gameboard to store """
-        a=[self.board[i,j].value for i in range(0,4) for j in range(0,4)]
-        return array(a).reshape((4,4))
+        a=[self.board[i,j].value for i in range(0,4) for j in range(0,4)]+[0,self.max,self.score,GameBoard.highScore]
+        return array(a).reshape((5,4))
 
     def restore(self,a):
         """ Regenerating the gameboard by taking values that are stored """
@@ -121,8 +130,10 @@ class GameBoard:
             l=list()
             for j in range(4):
                 if self.board[i,j].value==0:
-                    l+=list(filter(lambda x:x.value!=0,list(self.board[i+1:,j])))
-            if len(l)==0:
+                    l.extend(list(filter(lambda x:x.value!=0,list(self.board[i+1:,j]))))
+            s = len(l)
+            self.score += s
+            if s==0:
                 i+=1
                 continue
             else:
