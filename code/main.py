@@ -98,6 +98,13 @@ class Main:
               return 'exit' (String)
         """
         l=[2,4,8,16,32,64,0,0,0,0,0]
+        try:
+            pickle_in = open('.\\2048.txt','rb')
+            a = pickle.load(pickle_in)
+            GameBoard.highScore = a[4,3]
+            pickle_in.close()
+        except:
+            GameBoard.highScore = 0
         board=GameBoard(self.Display)
         board.restore(array([choice(l) for i in range(16)]).reshape((4,4)))
         board.display()
@@ -169,9 +176,6 @@ class Main:
         except:
             return
         a=pickle.load(pickle_in)
-        if a is None:
-            pickle_in.close()
-            return
         self.Game.GameBoard.restore(a)
         pickle_in.close()
 
