@@ -162,6 +162,7 @@ class GameBoard:
                 if self.board[i,j].value==self.board[i+1,j].value and self.board[i,j].value!=0:
                     self.flag=True
                     self.board[i,j].update(self.board[i,j].value*2)
+                    self.score += self.board[i,j].value
                     for k in range(i+2,4):
                         self.board[k-1,j].update(self.board[k,j].value)
                     self.board[3,j].update()
