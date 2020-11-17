@@ -27,17 +27,4 @@
           <li ><a href='https://github.com/Jyothi-prakash-muddana/2048-game/blob/master/code/main.py'> Main </a></li>
        </ol>
   </li>
-  <li> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/tree/master/Executable%20file'> Exe/Resource files </a></li> 
-       <ol>
-           <li> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/blob/master/Executable%20file/2048%20Game.exe'> exe file  </a></li>
-           <li> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/blob/master/Executable%20file/2048.txt'>text file </a></li>
-           <li> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/blob/master/Executable%20file/2048_IC5_2.ico'>Icon </a></li>
-       </ol>
-  </li>
-  <li> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/tree/master/Setup'>Setup
-       <ol>
-           <li> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/blob/master/Setup/mysetup.exe'>Setup File </a></li>
-           <li> <a href='https://github.com/Jyothi-prakash-muddana/2048-game/blob/master/Setup/2048%20SetUp.iss'>Inno setup Code </a></li>
-       </ol>
-  </li>
 </ul>
